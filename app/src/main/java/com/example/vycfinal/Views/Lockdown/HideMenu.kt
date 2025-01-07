@@ -47,6 +47,7 @@ import java.io.OutputStream
 import android.graphics.BitmapFactory
 import android.os.Environment
 import android.provider.MediaStore
+import androidx.compose.foundation.layout.Arrangement
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -63,6 +64,7 @@ fun HideMenu(navController: NavController, esteganografiaViewModel: Esteganograf
     Scaffold(
         topBar = {
             CenterAlignedTopAppBar(
+
                 title = { Text(text = "Ocultar Mensaje") },
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = MaterialTheme.colorScheme.primaryContainer,
@@ -80,8 +82,10 @@ fun HideMenu(navController: NavController, esteganografiaViewModel: Esteganograf
             modifier = Modifier
                 .padding(pad)
                 .fillMaxSize(),
-            horizontalAlignment = Alignment.CenterHorizontally
+            horizontalAlignment = Alignment.CenterHorizontally,
+            //verticalArrangement = Arrangement.Center // Centra los elementos verticalmente
         ) {
+            Spacer(modifier = Modifier.height(64.dp))
             Button(onClick = { singlePhotoPicker.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly)) }) {
                 Text("Seleccionar Imagen")
             }
@@ -91,6 +95,7 @@ fun HideMenu(navController: NavController, esteganografiaViewModel: Esteganograf
                 onValueChange = { cifrado = it },
                 label = { Text(text = "Texto: ") }
             )
+            Spacer(modifier = Modifier.height(24.dp))
             Button(onClick = {
                 uri?.let { selectedUri ->
                     val inputStream = context.contentResolver.openInputStream(selectedUri)

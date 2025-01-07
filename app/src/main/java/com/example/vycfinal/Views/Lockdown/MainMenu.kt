@@ -59,7 +59,7 @@ fun MainMenu(navController: NavController, esteganografiaVM: EsteganografiaViewM
     Scaffold(
         topBar = {
             CenterAlignedTopAppBar(
-                title = { Text(text = "Inventario") },
+                title = { Text(text = "TextPic") },
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = MaterialTheme.colorScheme.primaryContainer,
                     titleContentColor = MaterialTheme.colorScheme.primary
@@ -91,18 +91,28 @@ fun MainMenu(navController: NavController, esteganografiaVM: EsteganografiaViewM
                     Button(
                         onClick = {navController.navigate("HideMenu")},
                         colors = ButtonDefaults.buttonColors(),
-                        modifier = Modifier.fillMaxWidth()
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(vertical=16.dp)
                     ) {
-                        Text(text = "Ocultar texto en imagen")
+                        Text(
+                            text = "Ocultar texto en imagen",
+                            modifier = Modifier.padding(vertical=8.dp)
+                        )
                     }
                     Spacer(Modifier.height(8.dp))
                     Button(
                         onClick = {navController.navigate("RevealMenu")},
                         colors = ButtonDefaults.buttonColors(),
-                        modifier = Modifier.fillMaxWidth()
+                        modifier = Modifier
+                            .fillMaxWidth()
+
 
                     ) {
-                        Text(text = "Descifrar texto de imagen")
+                        Text(
+                            text = "Extraer texto de imagen",
+                            modifier = Modifier.padding(vertical=8.dp)
+                        )
                     }
                 }
             }

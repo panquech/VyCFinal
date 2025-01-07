@@ -55,7 +55,7 @@ fun RevealMenu(navController: NavController, esteganografiaViewModel: Esteganogr
     Scaffold(
         topBar = {
             CenterAlignedTopAppBar(
-                title = { Text(text = "Revelar Mensaje") },
+                title = { Text(text = "Extraer Mensaje") },
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = MaterialTheme.colorScheme.primaryContainer,
                     titleContentColor = MaterialTheme.colorScheme.primary
@@ -74,6 +74,7 @@ fun RevealMenu(navController: NavController, esteganografiaViewModel: Esteganogr
                 .fillMaxSize(),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
+            Spacer(modifier = Modifier.height(64.dp))
             Button(
                 onClick = {
                     singlePhotoPicker.launch(
@@ -86,9 +87,9 @@ fun RevealMenu(navController: NavController, esteganografiaViewModel: Esteganogr
             ) {
                 Text("Seleccionar Imagen")
             }
-            Spacer(Modifier.height(8.dp))
+            Spacer(Modifier.height(16.dp))
             AsyncImage(model = uri, contentDescription = null, modifier = Modifier.size(248.dp))
-            Spacer(Modifier.height(8.dp))
+            Spacer(Modifier.height(16.dp))
             Button(
                 onClick = {
                     uri?.let { selectedUri ->
@@ -125,7 +126,9 @@ fun RevealMenu(navController: NavController, esteganografiaViewModel: Esteganogr
                         Toast.makeText(context, "Por favor selecciona una imagen.", Toast.LENGTH_SHORT).show()
                     }
                 },
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(start = 20.dp, end = 20.dp)
             ) {
                 Text("Revelar Mensaje Oculto")
             }
@@ -138,12 +141,7 @@ fun RevealMenu(navController: NavController, esteganografiaViewModel: Esteganogr
                 )
             }
             Spacer(Modifier.height(16.dp))
-            Button(
-                onClick = { navController.navigate("MainMenu") },
-                modifier = Modifier
-            ) {
-                Text("Regresar al menú principal")
-            }
+
         }
     }
 }
