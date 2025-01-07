@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1038237121989",
+    "project_id": "virologia-criptografia",
+    "storage_bucket": "virologia-criptografia.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1038237121989:android:70eb5f6536e56e8e9c5fac",
+        "android_client_info": {
+          "package_name": "com.example.vycfinal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1038237121989-9koj3t8h8ul040ecemahrimulp47eumr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.vycfinal",
+            "certificate_hash": "cbb7b8fe8a60fc90fff81ab302dec8bc2c99868b"
+          }
+        },
+        {
+          "client_id": "1038237121989-re0kvp1sl2itogigdo8qn2dkt4paa9rv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4FdLQ8Z7TyQ6aovzM36q_9x13minUvXk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1038237121989-re0kvp1sl2itogigdo8qn2dkt4paa9rv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
